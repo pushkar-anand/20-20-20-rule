@@ -10,6 +10,7 @@ int main()
 {
   int c;
   c = sendNotification();
+
   return 0;
 }
 
@@ -17,7 +18,7 @@ int sendNotification()
 {
     notify_init("Reminding User");
     NotifyNotification* n = notify_notification_new ("Hii Pushkar!",
-                                 "Please look away from your screen untill the beeping stops",
+                                 "Please look away from your screen untill the music stops",
                                   "user-available");
     notify_notification_set_timeout(n, 20000); // 20 seconds
 
