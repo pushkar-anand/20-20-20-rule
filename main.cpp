@@ -10,7 +10,8 @@ int main()
 {
   int c;
   c = sendNotification();
-
+  sleep(1200); //sleep for 60*20 = 20minutes
+  main(); // re-run the main
   return 0;
 }
 
@@ -20,7 +21,7 @@ int sendNotification()
     NotifyNotification* n = notify_notification_new ("Hii Pushkar!",
                                  "Please look away from your screen untill the music stops",
                                   "user-available");
-    notify_notification_set_timeout(n, 20000); // 20 seconds
+    notify_notification_set_timeout(n, 20000); 
 
     if (!notify_notification_show(n, 0))
     {
