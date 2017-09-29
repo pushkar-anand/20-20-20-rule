@@ -7,7 +7,7 @@ This reminds you to look every 20 mins away from your computer screen
 
 # Compilation
 
- ` ~$ g++ main.cpp -o main.o ``pkg-config --cflags --libs libnotify``
+ `~$ g++ main.cpp -o main.o ` `pkg-config --cflags --libs libnotify``
 
 # Running 
  ` ~$ ./main.o `
