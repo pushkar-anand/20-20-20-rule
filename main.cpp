@@ -1,5 +1,7 @@
 #include <libnotify/notify.h>
 #include <iostream>
+#include <string>
+#include <experimental/filesystem>
 
 using namespace std;
 
@@ -8,9 +10,9 @@ void startBeeps();
 
 int main()
 {
+  sleep(1200); //sleep for 20 minutes
   int c;
   c = sendNotification();
-  sleep(1200); //sleep for 60*20 = 20minutes
   main(); // re-run the main
   return 0;
 }
@@ -34,5 +36,8 @@ int sendNotification()
 
 void startBeeps()
 {
-	system("canberra-gtk-play -f sound.wav");
+	string path = experimental::filesystem::current_path();
+	string fullPath = path + "/sound.wav";
+	string cmd = "canberra-gtk-play -f " + fullPath;
+	system(cmd.c_str());
 }
